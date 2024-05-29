@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-size: 20px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(90deg, #ff492d, #eee302);
+            margin: 0;
+            padding: 0;
+        }
+
+        #container2 {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            width: 100%;
+        }
+
+        #top-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        #top-container:hover {
+            background-color: rgb(215, 215, 215);
+        }
+
+        td a {
+            text-decoration: none;
+        }
+
+        #a-tarefa {
+            color: black;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="top-container">
+        <a id="a-tarefa" href="/">Nova Tarefa</a>
+    </div>
+    <div id="container2">
+        <h1 class="text-center">Lista De Tarefas</h1>
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nome da Tarefa</th>
+                    <th scope="col">Descrição da Tarefa</th>
+                    <th scope="col">Data Limite</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Excluir</th>
+                </tr>
+            </thead>
+            {{#each tarefas}}
+            <tr>
+                <td>{{nome}}</td>
+                <td>{{descricao}}</td>
+                <td>{{data_limite}}</td>
+                <td>
+                    <a href="/editar/{{id}}">Editar</a>
+                </td>
+                <td>
+                    <a href="/deletar/{{id}}">Excluir</a>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+
+    </div>
+</body>
+
+</html>

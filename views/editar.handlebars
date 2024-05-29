@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-size: 20px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(90deg, #ff492d, #eee302);
+        }
+
+        #container {
+            background: linear-gradient(90deg, #eee302, #ff492d);
+            padding: 100px;
+            border: 1px solid black;
+            box-shadow: 4px 7px 7px black;
+            border-radius: 8px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <form action="/atualizar/{{tarefa.id}}" method="POST">
+            <div class="mb-3">
+                <label>Nome da Tarefa:</label>
+                <input type="text" placeholder="..." name="txtNome" value="{{tarefa.nome}}"><br>
+            </div>
+
+            <div class="mb-3">
+                <label>Descrição da Tarefa:</label>
+                <input type="text" placeholder="..." name="txtDescricao" value="{{tarefa.descricao}}"><br>
+            </div>
+
+            <div class="mb-3">
+                <label>Prazo de Entrega:</label>
+                <input type="date" name="txtData" value="{{tarefa.data_limite}}"><br>
+            </div>
+
+
+            <div>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+                <a class="btn btn-primary" href="/lista">Voltar</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
