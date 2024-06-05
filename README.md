@@ -14,7 +14,6 @@ Esses dados são armazenados em um banco de dados. Ao clicar no botão para adic
 - Comandos do terminal:
     - npm install express --save
     - npm install sequelize --save
-    - npm install sequelize --save
     - npm install mysql2 --save
     - npm install express-handlebars --save
     - npm install body-parser --save
